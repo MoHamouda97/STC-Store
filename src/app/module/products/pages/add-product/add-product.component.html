@@ -1,0 +1,64 @@
+<div class="container">
+    <form [formGroup]="productForm">
+        <div class="row">
+            <div class="col-md-6 mb-3">
+                <label for="proName">
+                    Product Category:
+                </label>
+                <input 
+                    type="text" 
+                    class="form-control" 
+                    id="proName" 
+                    formControlName="category">
+            </div>
+            <div class="col-md-6 mb-3">
+                <label for="proTitle">
+                    Product Title:
+                </label>
+                <input 
+                    type="text" 
+                    class="form-control" 
+                    id="proTitle" 
+                    formControlName="title">
+            </div>
+            <div class="col-md-6 mb-3">
+                <label for="proPrice">
+                    Product Price:
+                </label>
+                <input 
+                    type="number" 
+                    class="form-control" 
+                    id="proPrice" 
+                    formControlName="price">
+            </div>
+            <div class="col-md-6 mb-3">
+                <label for="proImage">
+                    Product Image:
+                </label>
+                <input 
+                    type="text" 
+                    class="form-control" 
+                    id="proImage" 
+                    formControlName="image">
+            </div>
+            <div class="col-md-12 mb-3">
+                <label for="proDescription">
+                    Product Description:
+                </label>
+                <textarea 
+                    class="form-control" 
+                    id="proDescription" 
+                    formControlName="description"></textarea>
+            </div>
+            <div class="col-md-12">
+                <button 
+                    [disabled]="productForm.invalid" 
+                    (click)="addNewProduct()"
+                    class="btn btn-success add-btn">
+                    Add New Product
+                    <img *ngIf="isAdd" src="assets/images/spinner.gif" />
+                </button>
+            </div>
+        </div>
+    </form>
+</div>

@@ -1,0 +1,16 @@
+<div class="container">
+    <div class="row" style="align-items: center;" *ngIf="product">
+        <div class="col-md-2">
+            <img class="card-img-top" [src]="product.image" alt="Product image">
+        </div>
+        <div class="col-md-9">
+            <h5 class="card-title">{{product.title}}</h5>
+            <h6 class="card-subtitle mb-2 text-muted">{{product.category}} - {{product.price | currency:'USD'}}</h6>
+            <p class="card-text">{{product.description}}</p>
+        </div>
+    </div>
+
+    <div class="alert alert-danger" role="alert" *ngIf="!product">
+        This is a danger alert—check it out!
+    </div>    
+</div>
